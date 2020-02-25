@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Read,} from "./_pages"
+import {
+  BrowserRouter as Router,
+  Switch,
+  useLocation
+} from "react-router-dom";import {PrivateRoute} from './_routers/privateRoute';
+import { history } from "./_helper/history";
+
+// function usePageViews() {
+//   let location = useLocation();
+//   React.useEffect(() => {
+//     ga.send(["pageview", location.pathname]);
+//   }, [location]);
+// }
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // usePageViews();
+  return  <Switch>
+      <PrivateRoute path="/read"  component={Read} />
+      {/* <Route path="/add" exact component={add} />
+      <Route path="/edit" exact component={edit} /> */}
+    </Switch>
 }
 
 export default App;
