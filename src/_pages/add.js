@@ -1,6 +1,6 @@
 import React ,{ useState } from "react";
 
-const Read = () =>{
+const Add = () =>{
 
 
 
@@ -9,4 +9,4 @@ hi
     </>
 }
 
-export default Read;
+export default Add;
